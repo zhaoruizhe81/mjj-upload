@@ -11,6 +11,7 @@
 set -euo pipefail
 
 SKILL_NAME="mjj-image-host"
+REPO_URL="https://github.com/zhaoruizhe81/mjj-upload"
 MODE="copy"
 DO_UNINSTALL=0
 DEST_ROOT="${DSH_SKILLS_DIR:-${DSH_HOME:-$HOME/.dsh}/skills}"
@@ -79,6 +80,7 @@ chmod 644 "$TARGET/SKILL.md" "$TARGET/references/protocol.md"
 
 cat > "$TARGET/_source.txt" <<EOF
 source: 本地自制（逆向 https://mjj.today/ 前端上传器）
+upstream: $REPO_URL
 repo:   $REPO_ROOT
 date:   $(date -u +%Y-%m-%dT%H:%M:%SZ)
 mode:   $MODE
